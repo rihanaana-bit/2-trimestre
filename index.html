@@ -2,63 +2,173 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonardo da Vinci - O Gênio do Renascimento</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4efe6; /* Tom de papel antigo */
-            color: #2c251e;
+            color: #333;
+            background-color: #f9f7f7; /* Fundo levemente frio para destacar o vermelho */
         }
+
         header {
+            /* Gradiente usando um tom de vermelho escuro/vinho sobreposto à imagem */
+            background: linear-gradient(rgba(128, 0, 0, 0.75), rgba(40, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200') no-repeat center center/cover;
+            color: #fff;
             text-align: center;
-            border-bottom: 2px solid #8c6d53;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding: 100px 20px;
         }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
+
+        header p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #ffcccc; /* Texto de apoio em um rosa/vermelho bem claro */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(128, 0, 0, 0.05); /* Sombra sutil avermelhada */
+        }
+
         h2 {
-            color: #6e4a2b;
-            border-bottom: 1px solid #d1bfa7;
+            color: #990000; /* Vermelho escuro elegante */
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffcccc; /* Linha divisória vermelha clara */
             padding-bottom: 5px;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+
+        .grid-obras {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ffe6e6; /* Borda sutil avermelhada */
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #cc0000; /* Destaca em vermelho ao passar o mouse */
+        }
+
+        .card h3 {
+            color: #660000;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none; /* Remove a forma padrão */
+            margin-left: 10px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        /* Marcador de lista customizado em vermelho */
+        li::before {
+            content: "✦";
+            color: #cc0000;
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            color: #cc0000; /* Destaca os textos fortes em vermelho */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2b0000; /* Rodapé em vinho super escuro */
+            color: #ffb3b3;
+            font-size: 0.9rem;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <h1>Leonardo da Vinci</h1>
+        <p>Homem Vitruviano, Pintor, Cientista e Polímata do Renascimento</p>
+    </header>
+
     <div class="container">
-        <header>
-            <h1>Leonardo da Vinci</h1>
-            <p><em>Pintor, Cientista, Engenheiro e Inventor</em></p>
-        </header>
+        
+        <section id="biografia">
+            <h2>Quem Foi?</h2>
+            <p>Nascido em 1452 em Vinci, na Itália, Leonardo da Vinci é o maior símbolo do <strong>Renascimento Cultural</strong>. Ele não foi apenas um pintor genial, mas também um polímata que dominou áreas como anatomia, engenharia, matemática, música e botânica. Sua curiosidade insaciável e mente inventiva o tornaram um homem séculos à frente de seu tempo.</p>
+        </section>
 
-        <h2>Quem Foi?</h2>
-        <p>
-            Leonardo da Vinci (1452–1519) foi uma das figuras mais importantes do Renascimento italiano. 
-            Ele se destacou por sua curiosidade infinita e sua capacidade de dominar diversas áreas do conhecimento humano.
-        </p>
+        <section id="obras">
+            <h2>Obras Primas</h2>
+            <p>Algumas de suas pinturas e conceitos mudaram a história da arte ocidental:</p>
+            <div class="grid-obras">
+                <div class="card">
+                    <h3>Mona Lisa</h3>
+                    <p>Famosa por seu sorriso enigmático e pela técnica inovadora do <em>sfumato</em>.</p>
+                </div>
+                <div class="card">
+                    <h3>A Última Ceia</h3>
+                    <p>Um mural impressionante que retrata a reação dos apóstolos ao anúncio de Jesus.</p>
+                </div>
+                <div class="card">
+                    <h3>O Homem Vitruviano</h3>
+                    <p>O famoso desenho que une arte e ciência para estudar as proporções do corpo humano.</p>
+                </div>
+            </div>
+        </section>
 
-        <h2>Principais Obras de Arte</h2>
-        <ul>
-            <li><strong>Mona Lisa:</strong> Uma das pinturas mais famosas e misteriosas do mundo.</li>
-            <li><strong>A Última Ceia:</strong> Um mural grandioso que mostra a última refeição de Jesus com seus apóstolos.</li>
-        </ul>
+        <section id="invencoes">
+            <h2>Mente Inventiva</h2>
+            <p>Seus cadernos de anotações (códices) continham esboços de invenções que só viraram realidade séculos depois:</p>
+            <ul>
+                <li><strong>Máquinas Voadoras:</strong> Projetos baseados no voo dos pássaros e morcegos, incluindo o ancestral do helicóptero.</li>
+                <li><strong>Equipamentos de Guerra:</strong> Tanques de guerra blindados, bestas gigantes e catapultas.</li>
+                <li><strong>Estudos Anatômicos:</strong> Desenhos detalhados do sistema cardiovascular e de fetos no útero.</li>
+            </ul>
+        </section>
 
-        <h2>Invenções e Estudos</h2>
-        <p>
-            Muito à frente do seu tempo, Leonardo desenhou protótipos de máquinas voadoras (como o ornitóptero), 
-            tanques de guerra, paraquedas e fez estudos detalhados sobre a anatomia humana.
-        </p>
     </div>
+
+    <footer>
+        <p>&copy; 2026 - Página de Homenagem ao Renascimento</p>
+    </footer>
 
 </body>
 </html>
